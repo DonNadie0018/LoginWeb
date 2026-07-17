@@ -94,31 +94,25 @@
     </div>
 
     <script>
-      // Obtener el formulario y los elementos de mensajes
       const form = document.getElementById('recovery-form');
       const emailInput = document.getElementById('recovery-email');
       const successMessage = document.getElementById('success-message');
       const errorMessage = document.getElementById('error-message');
 
-      // Escuchar el evento de envío del formulario
       form.addEventListener('submit', function (event) {
         event.preventDefault(); // Prevenir el envío automático
 
-        const email = emailInput.value.trim(); // Obtener el valor del correo
+        const email = emailInput.value.trim(); 
 
-        // Validar el correo electrónico
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (emailRegex.test(email)) {
-          // Mostrar mensaje de éxito
           successMessage.style.display = 'block';
           errorMessage.style.display = 'none';
 
-          // Simular envío del enlace
           setTimeout(() => {
             alert('Enlace enviado a ' + email);
           }, 1000);
         } else {
-          // Mostrar mensaje de error
           successMessage.style.display = 'none';
           errorMessage.style.display = 'block';
         }
